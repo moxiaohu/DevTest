@@ -70,7 +70,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
  * An action should be an operation performed on the current contents of the window,
  * for example enabling or disabling a data overlay on top of the current content.</p>
  */
-public class DrawerLayoutActivity extends ActionBarActivity {
+public class MyDrawerLayoutActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
