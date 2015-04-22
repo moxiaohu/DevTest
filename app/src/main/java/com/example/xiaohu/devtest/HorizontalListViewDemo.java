@@ -46,6 +46,8 @@ public class HorizontalListViewDemo extends Activity {
         display.getSize(size);
         screenWidth = size.x;
 
+        Log.d("screenWidth width", screenWidth + "");
+
         listview = (HorizontalListView) findViewById(R.id.listview);
 
         Log.d("listview width", listview.getLayoutParams().width + "");
