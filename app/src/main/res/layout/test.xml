@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/a"
+        android:layout_height="match_parent">
+
+        <!--<com.facebook.login.widget.LoginButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--/>-->
+        <!--<com.facebook.login.widget.LoginButton-->
+            <!--android:id="@+id/login_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:layout_marginBottom="30dp" />-->
+
+        <Button
+            android:layout_width="100dp"
+            android:id="@+id/b"
+            android:layout_height="100dp" />
+
+        <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="sfsdfsdfsgsdsfdfsfd"/>
+
+
+        <!--<ImageView-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_marginLeft="-40dp"-->
+            <!--android:layout_above="@+id/buttondown"-->
+            <!--android:layout_alignLeft="@+id/buttondown"-->
+            <!--android:src="@drawable/icon"/>-->
+    </RelativeLayout>
+</LinearLayout>
