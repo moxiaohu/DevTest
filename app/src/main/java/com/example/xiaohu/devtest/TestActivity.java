@@ -184,6 +184,7 @@ public class TestActivity extends Activity {
                 handlePendingAction();
                 return;
             } else {
+                // We need to get new permissions, then complete the action when we get called back.
                 LoginManager.getInstance().logInWithPublishPermissions(
                         this,
                         Arrays.asList(PERMISSION));
