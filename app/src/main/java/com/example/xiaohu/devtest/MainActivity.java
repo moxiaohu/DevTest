@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
@@ -28,9 +29,8 @@ public class MainActivity extends Activity {
     public static final String TAG = "ImgDisplayActivity";
     //控件声明
     private Button btnZoomin, btnZoomout;
-    private ImageView imgDisPlay;
     private EditText edtTxtDisplay;
-    private LinearLayout lLayoutDisplay;
+    private RelativeLayout lLayoutDisplay;
     private FrameLayout fLayoutDisplay;
 
     private Bitmap bitmap;
@@ -62,8 +62,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.drag_layout);
         //初始化
         fLayoutDisplay = (FrameLayout) findViewById(R.id.flayout_img_display);
-        lLayoutDisplay = (LinearLayout) findViewById(R.id.linearLayout_img_display);
-        imgDisPlay = (ImageView) findViewById(R.id.img_display);
+        lLayoutDisplay = (RelativeLayout) findViewById(R.id.linearLayout_img_display);
         edtTxtDisplay = (EditText) findViewById(R.id.text);
         btnZoomin = (Button) findViewById(R.id.btn_min);
         btnZoomout = (Button) findViewById(R.id.btn_out);
@@ -87,9 +86,8 @@ public class MainActivity extends Activity {
             }
         });
 
-        imgDisPlay.setImageResource(R.drawable.icon);
         //给图片绑定监听器哦
-        imgDisPlay.setOnTouchListener(new ImageViewOnTouchListener());
+        edtTxtDisplay.setOnTouchListener(new ImageViewOnTouchListener());
 
     }
 
@@ -113,8 +111,6 @@ public class MainActivity extends Activity {
         Matrix matrix = new Matrix();
         matrix.postScale(scaleWidth, scaleHeight); //设计缩放比例
 
-        TextView textView = new TextView(this);
-        imgDisPlay.setImageMatrix(matrix);
     }
 
     /**计算触摸实现缩放**/
@@ -141,7 +137,6 @@ public class MainActivity extends Activity {
                         currMatrix.set(matrix);
 
                         midPoint = getMidPoint(event); //记下两个点之间的中心点
-
                     }
 
                     break;
@@ -151,12 +146,12 @@ public class MainActivity extends Activity {
                     if(mode == DRAG) {  //拖拽模式
                         Log.i(TAG,"一只手指在拖拽");
 
-                        //开始--》结束点的距离
-                        float dx = event.getX() - starPoint.x;
-                        float dy = event.getY() - starPoint.y;
+                        Log.d("touch point", "x " + event.getX() + "y " + event.getY());
 
-                        matrix.set(currMatrix);
-                        matrix.postTranslate(dx, dy);//移动到指定点：矩阵移动比例；eg:缩放有缩放比例
+                        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams)edtTxtDisplay.getLayoutParams();
+                        layoutParams.leftMargin = (int)event.getX();
+                        layoutParams.topMargin = (int)event.getY();
+                        edtTxtDisplay.setLayoutParams(layoutParams);
                     } else if(mode == ZOOM) {  //缩放模式
                         Log.i(TAG,"正在缩放");
 
@@ -177,8 +172,6 @@ public class MainActivity extends Activity {
                 default:
                     break;
             }
-
-            imgDisPlay.setImageMatrix(matrix);
 
             //两只手指的缩放
             return true;

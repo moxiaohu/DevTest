@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linearLayout_img_display"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="text"
+            android:editable="false"
             android:background="#00DFFD"
             android:clickable="false"/>
         <ImageView
@@ -24,7 +25,7 @@
             android:paddingBottom="5.0dip"
             android:paddingTop="5.0dip"
             android:scaleType="matrix" />
-    </LinearLayout>
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
