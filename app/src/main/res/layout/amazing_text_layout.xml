@@ -1,15 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/content_layout"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/earth">
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_margin="20dp"
-        android:textColor="#ffffff"
-        android:text="CREATE TEXT"
-        android:background="#EF1B1B"
         android:id="@+id/create_text_button"
-        android:layout_height="50dp" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20dp"
+        android:background="#EF1B1B"
+        android:text="CREATE TEXT"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:id="@+id/text_size_Bar_layout"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/text_widget_button"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/text_size_Bar"
+            android:layout_width="match_parent"
+            android:layout_weight="8"
+            android:layout_height="40dp"
+            />
+
+        <Button
+            android:id="@+id/button_ok_text_size"
+            android:layout_width="40dp"
+            android:layout_weight="1"
+            android:text="ok"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/text_toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:layout_above="@+id/text_widget_button"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/new_text_button"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/color_text_button"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/size_text_button"
+            android:layout_weight="1"/>
+
+        <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/typeface_text_button"
+        android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/button_ok_text_widget"
+            android:layout_weight="1"/>
+        </LinearLayout>
+    
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/text_widget_button"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:text="text_widget"
+        android:layout_height="40dp" />
+
+
 </RelativeLayout>
