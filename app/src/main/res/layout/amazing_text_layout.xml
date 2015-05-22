@@ -3,7 +3,17 @@
     android:id="@+id/content_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/earth">
+    >
+
+
+
+    <EditText
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:text="hello how are you"
+        android:gravity="top|center_horizontal"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="100dp"/>
 
     <Button
         android:id="@+id/create_text_button"
@@ -13,6 +23,44 @@
         android:background="#EF1B1B"
         android:text="CREATE TEXT"
         android:textColor="#ffffff" />
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/create_text_button"
+        android:layout_alignStart="@+id/create_text_button">
+
+        <EditText
+            android:id="@+id/calc_txt_Prise"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:inputType="numberDecimal"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:textColor="@color/material_blue_grey_800"
+            android:textStyle="bold"
+            android:hint="calc_txt_Prise"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/calc_clear_txt_Prise"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#FFFFFF" />
+
+        <Button
+            android:id="@+id/abc"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="200dp"
+            android:background="#FFFFFF" />
+    </FrameLayout>
+    <!---->
+    <!--<EditText-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:hint="fdsfdg g"-->
+        <!--android:drawableBottom="@drawable/icon"/>-->
 
     <LinearLayout
         android:id="@+id/text_size_Bar_layout"

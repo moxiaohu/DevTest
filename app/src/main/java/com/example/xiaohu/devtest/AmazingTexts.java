@@ -210,7 +210,6 @@ public class AmazingTexts extends Activity {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(screenWidth/3, screenWidth/3);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
         layoutParams.addRule(RelativeLayout.ALIGN_PARENT_TOP);
-//        layoutParams.addRule(RelativeLayout.ALIGN_TOP);
         editText.setLayoutParams(layoutParams);
         relativeLayout.addView(editText);
 
